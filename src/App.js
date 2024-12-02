@@ -2,10 +2,15 @@ import { ArrowRight, ExternalLink, Code, Layers, Server } from "lucide-react";
 
 import logo from "./img/logo.jpg";
 import hero from "./img/hero.jpg";
+import kwadagoHero from "./img/kwadago.png";
+import gajamiaHero from "./img/gajamia.png";
+
+const softBeige = "#f9efe7";
+const brightYellow = "#ffe872";
 
 const App = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className={`bg-[${softBeige}] min-h-screen text-gray-900`}>
       <Header />
       <Hero />
       <WorkSection />
@@ -24,33 +29,24 @@ const Header = () => {
           <img
             src={logo}
             alt="Profile"
-            className="w-12 h-12 rounded-full object-cover"
+            className="w-12 h-12 rounded-full object-cover border-2 border-black"
           />
-          <div className="text-sm font-bold uppercase text-gray-800">
-            <div>Abdullahi</div>
-            <div>Auwal</div>
-            <div>Haruna</div>
+          <div className="text-sm font-bold uppercase">
+            <div className="px-1">Abdullahi</div>
+            <div className="px-1">Auwal</div>
+            <div className="px-1">Haruna</div>
           </div>
         </div>
         <nav className="flex space-x-6">
-          <a
-            href="#work"
-            className="text-gray-600 hover:text-blue-600 transition"
-          >
-            My Work
-          </a>
-          <a
-            href="#services"
-            className="text-gray-600 hover:text-blue-600 transition"
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            className="text-gray-600 hover:text-blue-600 transition"
-          >
-            Contact Us
-          </a>
+          {["Work", "Services", "Contact"].map((item, index) => (
+            <a
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              className={`text-black font-medium hover:bg-[${brightYellow}] px-2 py-1 transition-colors duration-300 rounded`}
+            >
+              {item}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
@@ -64,24 +60,33 @@ const Hero = () => {
       className="pt-32 pb-16 max-w-6xl mx-auto px-4 flex items-center"
     >
       <div className="w-1/2 pr-12">
-        <h1 className="text-5xl font-bold text-gray-900 mb-6">
-          Full Stack Developer <br />
-          Creating Digital Solutions
+        <h1 className="text-5xl font-bold mb-6">
+          <span className={`bg-[${brightYellow}] px-2`}>
+            Frontend Developer
+          </span>{" "}
+          / <br />
+          <span className={`bg-[${brightYellow}] px-2`}>Web Designer</span>
         </h1>
-        <p className="text-gray-600 mb-8 leading-relaxed">
-          I design and develop robust web applications that transform complex
-          challenges into elegant, efficient solutions.
+        <p className="mb-8 leading-relaxed">
+          Results-driven Frontend Web Developer with expertise in building
+          responsive, user-centric web applications. Skilled in modern
+          JavaScript frameworks and UI/UX best practices, with a strong focus on
+          performance optimization, accessibility, and SEO.
         </p>
         <a
           href="#work"
-          className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="inline-flex items-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
         >
-          View My Work <ArrowRight className="ml-2" />
+          see my work <ArrowRight className="ml-2" />
         </a>
       </div>
       <div className="w-1/2">
-        <img src={hero} alt="Hero Visual" className="rounded-lg shadow-xl" />
-        <p className="mt-4 text-sm text-gray-600 text-center">
+        <img
+          src={hero}
+          alt="Hero Visual"
+          className="rounded-lg shadow-xl border-4 border-black"
+        />
+        <p className={`mt-4 text-sm text-center bg-[${brightYellow}] px-2`}>
           @ DevFest Ilorin Kwara State 2024
         </p>
       </div>
@@ -92,59 +97,66 @@ const Hero = () => {
 const WorkSection = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "GA JAMI'A (Education Commerce)",
+      technologies: ["React", "Firebase", "Tailwind"],
       description:
         "Full-featured e-commerce solution with secure payment integration and responsive design.",
-      image: "/api/placeholder/400/300",
-      link: "https://example.com/ecommerce",
+      image: gajamiaHero,
+      link: "https://gajamia.vercel.app/",
     },
     {
-      title: "Project Management Tool",
-      technologies: ["React", "GraphQL", "PostgreSQL", "Docker"],
+      title: "KWADAGO (Job Application Platform)",
+      technologies: ["HTML", "CSS", "JavaScript", "Responsive Web Design"],
       description:
         "Collaborative project management application with real-time updates and task tracking.",
-      image: "/api/placeholder/400/300",
-      link: "https://example.com/project-management",
+      image: kwadagoHero,
+      link: "https://kwadago.vercel.app/",
     },
   ];
 
   return (
-    <section id="work" className="py-16 max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-        My Featured Projects
+    <section
+      id="work"
+      className={`py-16 max-w-6xl mx-auto px-4 bg-[${softBeige}]`}
+    >
+      <h2 className="text-3xl font-bold mb-12 text-center">
+        <span className=" px-2">Featured Projects</span>
       </h2>
       {projects.map((project, index) => (
         <div
           key={index}
-          className="flex items-center mb-16 bg-white rounded-lg shadow-md overflow-hidden"
+          className="flex items-center mb-16 bg-white rounded-lg shadow-md overflow-hidden border-4 border-black"
         >
           <div className="w-1/2 p-8">
             <img
               src={project.image}
               alt={project.title}
-              className="rounded-lg shadow-xl"
+              className="rounded-lg shadow-xl border-2 border-black"
             />
           </div>
           <div className="w-1/2 p-8">
-            <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
+            <h3 className="text-2xl font-semibold mb-4">
+              <span className={`bg-[${brightYellow}] px-1`}>
+                {project.title}
+              </span>
+            </h3>
             <div className="flex space-x-2 mb-4">
               {project.technologies.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
+                  className="px-3 py-1 bg-black text-white rounded-full text-sm"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-600 mb-6">{project.description}</p>
+            <p className="mb-6">{project.description}</p>
             <div className="flex space-x-4">
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                className="inline-flex items-center px-5 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
               >
                 View Project <ExternalLink className="ml-2" size={18} />
               </a>
@@ -159,33 +171,39 @@ const WorkSection = () => {
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Code className="text-blue-600" size={36} />,
+      icon: <Code className="text-black" size={36} />,
       title: "Web Development",
       description:
         "Custom web application development using modern technologies.",
     },
     {
-      icon: <Layers className="text-blue-600" size={36} />,
-      title: "Full-Stack Solutions",
+      icon: <Server className="text-black" size={36} />,
+      title: "Production Design",
+      description:
+        "Seamless third-party API integrations and microservices architecture.",
+    },
+    {
+      icon: <Layers className="text-black" size={36} />,
+      title: "Wordpress Development",
       description:
         "End-to-end development from frontend to backend infrastructure.",
     },
     {
-      icon: <Server className="text-blue-600" size={36} />,
-      title: "API Integration",
+      icon: <Server className="text-black" size={36} />,
+      title: "SEO / Digital Marketing",
       description:
         "Seamless third-party API integrations and microservices architecture.",
     },
   ];
 
   return (
-    <section id="services" className="py-16 bg-white">
+    <section id="services" className={`py-16 bg-[${softBeige}]`}>
       <div className="max-w-6xl mx-auto px-4 flex">
         <div className="w-1/2 pr-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Services I Provide
+          <h2 className="text-3xl font-bold mb-6">
+            <span className=" px-2">Services I Provide</span>
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="leading-relaxed">
             Delivering high-quality digital solutions tailored to your business
             needs.
           </p>
@@ -194,12 +212,16 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6 rounded-lg flex items-center space-x-6"
+              className="bg-white p-6 rounded-lg flex items-center space-x-6 border-4 border-black"
             >
               {service.icon}
               <div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-2">
+                  <span className={`bg-[${brightYellow}] px-1`}>
+                    {service.title}
+                  </span>
+                </h3>
+                <p>{service.description}</p>
               </div>
             </div>
           ))}
@@ -211,41 +233,49 @@ const ServicesSection = () => {
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-16 max-w-6xl mx-auto px-4 flex">
+    <section
+      id="contact"
+      className={`py-16 max-w-6xl mx-auto px-4 flex bg-[${softBeige}]`}
+    >
       <div className="w-1/2 pr-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Want to Work Together?
+        <h2 className="text-3xl font-bold mb-6">
+          <span className=" px-2">Want to Work Together?</span>
         </h2>
-        <p className="text-gray-600 mb-8">
+        <p className="mb-8">
           I'm always open to discussing product design work or partnership
           opportunities.
         </p>
         <div className="flex space-x-4">
           <a
             href="mailto:contact@abdullahiauwal.com"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+            className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
           >
             Contact Me
           </a>
         </div>
       </div>
       <div className="w-1/2">
-        <h3 className="text-2xl font-semibold mb-6">How I Handle Projects</h3>
+        <h3 className="text-2xl font-semibold mb-6">
+          <span className=" px-1">How I Handle Projects</span>
+        </h3>
         <div className="space-y-4">
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <h4 className="font-medium mb-2">Collaborative Approach</h4>
-            <p className="text-gray-600 text-sm">
-              I work closely with clients, ensuring clear communication and
-              transparency throughout the project lifecycle.
-            </p>
-          </div>
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <h4 className="font-medium mb-2">Agile Methodology</h4>
-            <p className="text-gray-600 text-sm">
-              Implementing iterative development with regular updates and
-              flexible scope management.
-            </p>
-          </div>
+          {["Collaborative Approach", "Agile Methodology"].map(
+            (title, index) => (
+              <div
+                key={index}
+                className="bg-white p-4 rounded-lg border-4 border-black"
+              >
+                <h4 className="font-medium mb-2">
+                  <span className={`bg-[${brightYellow}] px-1`}>{title}</span>
+                </h4>
+                <p className="text-sm">
+                  {title === "Collaborative Approach"
+                    ? "I work closely with clients, ensuring clear communication and transparency throughout the project lifecycle."
+                    : "Implementing iterative development with regular updates and flexible scope management."}
+                </p>
+              </div>
+            )
+          )}
         </div>
       </div>
     </section>
@@ -254,22 +284,26 @@ const ContactSection = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
         <div>
-          <h3 className="text-xl font-bold">Abdullahi Auwal Haruna</h3>
-          <p className="text-gray-400 mt-2">Fronten Developer</p>
+          <h3 className="text-xl font-bold">
+            <span className={`bg-[${brightYellow}] text-black px-1`}>
+              Abdullahi Auwal Haruna
+            </span>
+          </h3>
+          <p className="mt-2">Frontend Developer / Web Designer</p>
         </div>
         <div className="flex space-x-4">
-          <a href="#" className="hover:text-blue-500 transition">
-            GitHub
-          </a>
-          <a href="#" className="hover:text-blue-500 transition">
-            LinkedIn
-          </a>
-          <a href="#" className="hover:text-blue-500 transition">
-            Email
-          </a>
+          {["GitHub", "LinkedIn", "Email"].map((link, index) => (
+            <a
+              key={index}
+              href="#"
+              className={`hover:bg-[${brightYellow}] hover:text-black px-2 py-1 transition-colors duration-300`}
+            >
+              {link}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
