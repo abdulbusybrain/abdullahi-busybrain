@@ -286,19 +286,19 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/abdul-busybrain",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername",
+      url: "www.linkedin.com/in/abdullahi-auwal-haruna-3b298422b",
     },
     {
       name: "X",
       url: "https://twitter.com/yourusername",
     },
     {
-      name: "Whatsapp/Telegram",
-      url: "https://wa.me/yournumber",
+      name: "Whatsapp",
+      url: "https://wa.me/+2348064676821",
     },
   ];
 
@@ -315,15 +315,17 @@ const Footer = () => {
         </div>
         <div className="flex space-x-4">
           {socialLinks.map((link, index) => {
-            <a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`hover:bg-[${brightYellow}] hover:text-black px-2 py-1 transition-colors duration-300`}
-            >
-              {link.name}
-            </a>;
+            return (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`hover:bg-[${brightYellow}] hover:text-black px-2 py-1 transition-colors duration-300`}
+              >
+                {link.name}
+              </a>
+            );
           })}
         </div>
       </div>
