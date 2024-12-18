@@ -26,11 +26,13 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <img
-            src={logo}
-            alt="Profile"
-            className="w-12 h-12 rounded-full object-cover border-2 border-black"
-          />
+          <a href="/">
+            <img
+              src={logo}
+              alt="Profile"
+              className="w-12 h-12 rounded-full object-cover border-2 border-black"
+            />
+          </a>
           <div className="text-sm font-bold uppercase">
             <div className="px-1">Abdullahi</div>
             <div className="px-1">Auwal</div>
@@ -57,17 +59,15 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="pt-32 pb-16 max-w-6xl mx-auto px-4 flex items-center"
+      className="pt-28 pb-16 max-w-6xl mx-auto px-4 min-h-screen flex flex-col md:flex-row items-center"
     >
-      <div className="w-1/2 pr-12">
-        <h1 className="text-5xl font-bold mb-6">
-          <span className={`bg-[${brightYellow}] px-2`}>
-            Frontend Developer
-          </span>{" "}
-          / <br />
+      <div className="w-full md:w-1/2 pr-0 md:pr-12">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 -mt-20 md:-mt-56">
+          <span className={`bg-[${brightYellow}]`}>Frontend Developer</span> /{" "}
+          <br />
           <span className={`bg-[${brightYellow}] px-2`}>Web Designer</span>
         </h1>
-        <p className="mb-8 leading-relaxed">
+        <p className="mb-8 leading-relaxed text-base sm:text-lg">
           Results-driven Frontend Web Developer with expertise in building
           responsive, user-centric web applications. Skilled in modern
           JavaScript frameworks and UI/UX best practices, with a strong focus on
@@ -100,7 +100,7 @@ const WorkSection = () => {
       title: "GA JAMI'A (Education Commerce)",
       technologies: ["React", "Firebase", "Tailwind"],
       description:
-        "Full-featured e-commerce solution with secure payment integration and responsive design.",
+        "Full-featured education-commerce solution with secure payment integration and responsive design.",
       image: gajamiaHero,
       link: "https://gajamia.vercel.app/",
     },
@@ -108,7 +108,7 @@ const WorkSection = () => {
       title: "KWADAGO (Job Application Platform)",
       technologies: ["HTML", "CSS", "JavaScript", "Responsive Web Design"],
       description:
-        "Collaborative project management application with real-time updates and task tracking.",
+        "A streamlined digital platform connecting job seekers with employers, enabling easy application submissions while providing powerful tools for resume management, job tracking, and professional networking in one cohesive ecosystem.",
       image: kwadagoHero,
       link: "https://kwadago.vercel.app/",
     },
@@ -136,9 +136,7 @@ const WorkSection = () => {
           </div>
           <div className="w-1/2 p-8">
             <h3 className="text-2xl font-semibold mb-4">
-              <span className={`bg-[${brightYellow}] px-1`}>
-                {project.title}
-              </span>
+              <span className={`bg-[${brightYellow}] `}>{project.title}</span>
             </h3>
             <div className="flex space-x-2 mb-4">
               {project.technologies.map((tech, idx) => (
@@ -201,7 +199,7 @@ const ServicesSection = () => {
       <div className="max-w-6xl mx-auto px-4 flex">
         <div className="w-1/2 pr-12">
           <h2 className="text-3xl font-bold mb-6">
-            <span className=" px-2">Services I Provide</span>
+            <span className="">Services I Provide</span>
           </h2>
           <p className="leading-relaxed">
             Delivering high-quality digital solutions tailored to your business
@@ -217,7 +215,7 @@ const ServicesSection = () => {
               {service.icon}
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  <span className={`bg-[${brightYellow}] px-1`}>
+                  <span className={`bg-[${brightYellow}]`}>
                     {service.title}
                   </span>
                 </h3>
@@ -294,7 +292,7 @@ const Footer = () => {
     },
     {
       name: "X",
-      url: "https://twitter.com/yourusername",
+      url: "https://x.com/abdul-busybrain",
     },
     {
       name: "Whatsapp",
@@ -307,7 +305,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
         <div>
           <h3 className="text-xl font-bold">
-            <span className={`bg-[${brightYellow}] text-black px-1`}>
+            <span className={`bg-[${brightYellow}]`}>
               Abdullahi Auwal Haruna
             </span>
           </h3>
@@ -321,7 +319,7 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`hover:bg-[${brightYellow}] hover:text-black px-2 py-1 transition-colors duration-300`}
+                className={`hover:bg-[${brightYellow}] hover:text-yellow-600 px-2 py-1 transition-colors duration-300`}
               >
                 {link.name}
               </a>
