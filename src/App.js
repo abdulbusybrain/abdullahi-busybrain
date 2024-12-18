@@ -283,6 +283,25 @@ const ContactSection = () => {
 };
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      name: "GitHub",
+      url: "https://github.com/yourusername",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/yourusername",
+    },
+    {
+      name: "X",
+      url: "https://twitter.com/yourusername",
+    },
+    {
+      name: "Whatsapp/Telegram",
+      url: "https://wa.me/yournumber",
+    },
+  ];
+
   return (
     <footer className="bg-black text-white py-12">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
@@ -295,15 +314,17 @@ const Footer = () => {
           <p className="mt-2">Frontend Developer / Web Designer</p>
         </div>
         <div className="flex space-x-4">
-          {["GitHub", "LinkedIn", "Email"].map((link, index) => (
+          {socialLinks.map((link, index) => {
             <a
               key={index}
-              href="#"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hover:bg-[${brightYellow}] hover:text-black px-2 py-1 transition-colors duration-300`}
             >
-              {link}
-            </a>
-          ))}
+              {link.name}
+            </a>;
+          })}
         </div>
       </div>
     </footer>
