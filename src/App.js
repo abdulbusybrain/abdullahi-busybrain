@@ -1,5 +1,6 @@
 import { ArrowRight, ExternalLink, Code, Layers, Server } from "lucide-react";
 
+// Images
 import logo from "./img/logo.jpg";
 import hero from "./img/hero.jpg";
 import kwadagoHero from "./img/kwadago.png";
