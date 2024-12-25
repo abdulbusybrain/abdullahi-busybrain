@@ -5,6 +5,7 @@ import logo from "./img/logo.jpg";
 import hero from "./img/hero.jpg";
 import kwadagoHero from "./img/kwadago.png";
 import gajamiaHero from "./img/gajamia.png";
+import foodiHero from "./img/FOODI.png";
 
 const softBeige = "#f9efe7";
 const brightYellow = "#ffe872";
@@ -98,6 +99,15 @@ const Hero = () => {
 const WorkSection = () => {
   const projects = [
     {
+      title: "KWADAGO (Job Application Platform)",
+      technologies: ["HTML", "CSS", "JavaScript", "Responsive Web Design"],
+      description:
+        "A streamlined digital platform connecting job seekers with employers, enabling easy application submissions while providing powerful tools for resume management, job tracking, and professional networking in one cohesive ecosystem.",
+      image: kwadagoHero,
+      link: "https://kwadago.vercel.app/",
+    },
+
+    {
       title: "GA JAMI'A (Education Commerce)",
       technologies: ["React", "Firebase", "Tailwind"],
       description:
@@ -105,12 +115,13 @@ const WorkSection = () => {
       image: gajamiaHero,
       link: "https://gajamia.vercel.app/",
     },
+
     {
-      title: "KWADAGO (Job Application Platform)",
+      title: "FOODI (Restaurant Website)",
       technologies: ["HTML", "CSS", "JavaScript", "Responsive Web Design"],
       description:
         "A streamlined digital platform connecting job seekers with employers, enabling easy application submissions while providing powerful tools for resume management, job tracking, and professional networking in one cohesive ecosystem.",
-      image: kwadagoHero,
+      image: foodiHero,
       link: "https://kwadago.vercel.app/",
     },
   ];
