@@ -1,0 +1,32 @@
+{
+  "workbench.colorTheme": "GitHub Dark Default",
+  "editor.fontSize": 16,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "editor.wordWrap": "on",
+  "security.workspace.trust.untrustedFiles": "open",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "eslint.run": "onSave",
+  "eslint.codeActionsOnSave.rules": null,
+  "git.openRepositoryInParentFolders": "never",
+
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE",
+      "color": "#333",
+      "backgroundColor": "#f1c40f"
+    },
+    {
+      "text": "//",
+      "color": "#333",
+      "backgroundColor": "#ddd"
+    }
+  ],
+  "workbench.startupEditor": "none",
+  "files.autoSave": "onFocusChange",
+  "workbench.iconTheme": "material-icon-theme",
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}
