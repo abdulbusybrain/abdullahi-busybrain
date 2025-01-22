@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, ExternalLink, Code, Layers, Server } from "lucide-react";
+import {
+  ArrowRight,
+  ExternalLink,
+  Code,
+  LucideShoppingCart,
+  MessageCircleCode,
+  ScanSearchIcon,
+  AppleIcon,
+} from "lucide-react";
 
 // Images
 import hero from "./img/hero.jpg";
@@ -54,6 +62,7 @@ const Header = () => {
 
   return (
     <header
+      id="header"
       className={`fixed top-0 left-0 right-0 bg-white shadow-sm z-50 transition-transform duration-300 ${
         isScrolling ? "-translate-y-full" : "translate-y-0"
       }`}
@@ -73,7 +82,7 @@ const Header = () => {
             <a
               key={index}
               href={`#${item.toLowerCase()}`}
-              className={`text-black font-medium hover:bg-[${brightYellow}] px-2 py-1 transition-colors duration-300 rounded ${
+              className={`text-black hover:bg-black hover:text-white font-medium px-2 py-1 transition-colors duration-300 rounded ${
                 activeSection === item.toLowerCase()
                   ? `bg-[${brightYellow}]`
                   : ""
@@ -104,7 +113,8 @@ const Hero = () => {
           Results-driven Frontend Web Developer with expertise in building
           responsive, user-centric web applications. Skilled in modern
           JavaScript frameworks and UI/UX best practices, with a strong focus on
-          performance optimization, accessibility, and SEO.
+          performance optimization, accessibility, and Search Engine
+          Optimization (SEO).
         </p>
         <a
           href="#work"
@@ -224,26 +234,26 @@ const ServicesSection = () => {
         "Designing user interfaces and experiences using tools like Figma to create wireframes, prototypes, and high-fidelity designs.",
     },
     {
-      icon: <Server className="text-black" size={36} />,
+      icon: <LucideShoppingCart className="text-black" size={36} />,
       title: "E-commerce Development",
       description:
         "Developing e-commerce websites with features like product listings, shopping carts, and payment gateways.",
     },
     {
-      icon: <Layers className="text-black" size={36} />,
+      icon: <MessageCircleCode className="text-black" size={36} />,
       title: "Content Management Systems (CMS)",
       description:
         "Customizing and developing websites using WordPress, including theme development and plugin integration.",
     },
     {
-      icon: <Server className="text-black" size={36} />,
+      icon: <ScanSearchIcon className="text-black" size={36} />,
       title: "SEO Optimization",
       description:
         "Implementing best practices for search engine optimization to improve website visibility and ranking on search engines.",
     },
 
     {
-      icon: <Code className="text-black" size={36} />,
+      icon: <AppleIcon className="text-black" size={36} />,
       title: "Custom Web Applications",
       description:
         "Developing custom web applications tailored to specific business needs using modern web technologies.",
@@ -296,12 +306,12 @@ const ContactSection = () => {
           <span className="">Want to Work Together?</span>
         </h2>
         <p className="mb-8">
-          I'm always open to discussing product design work or partnership
-          opportunities.
+          I'm <span className="font-black">one DM</span> away for consultation,
+          full-stack development, partnership or freelancing opportunities.
         </p>
         <div className="flex space-x-4">
           <a
-            href="mailto:contact@abdullahiauwal.com"
+            href="mailto:abdullahiauwalharun@gmail.com"
             className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
           >
             Contact Me
@@ -336,9 +346,7 @@ const ContactSection = () => {
               className="bg-white p-4 rounded-lg border-4 border-black"
             >
               <h4 className="font-medium mb-2">
-                <span className={`bg-[${brightYellow}] px-1`}>
-                  {item.title}
-                </span>
+                <span className={``}>{item.title}</span>
               </h4>
               <p className="text-sm">{item.description}</p>
             </div>
@@ -374,9 +382,9 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0 text-center md:text-left">
           <h3 className="text-xl font-bold">
-            <span className={`bg-[${brightYellow}]`}>
-              Abdullahi Auwal Haruna
-            </span>
+            <a href="/">
+              <span className="uppercase">Abdullahi Auwal Haruna</span>
+            </a>
           </h3>
           <p className="mt-2">Frontend Developer / Web Designer</p>
         </div>
@@ -388,7 +396,7 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`hover:bg-[${brightYellow}] hover:text-yellow-600 px-2 py-1 transition-colors duration-300`}
+                className={`hover:bg-white hover:text-black px-2 py-1 transition-colors hover:rounded duration-300`}
               >
                 {link.name}
               </a>
