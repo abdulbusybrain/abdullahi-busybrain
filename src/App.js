@@ -113,8 +113,8 @@ const Hero = () => {
           Results-driven Frontend Web Developer with expertise in building
           responsive, user-centric web applications. Skilled in modern
           JavaScript frameworks and UI/UX best practices, with a strong focus on
-          performance optimization, accessibility, and Search Engine
-          Optimization (SEO).
+          performance optimization, accessibility, and SEO [Search Engine
+          Optimization].
         </p>
         <a
           href="#work"
