@@ -12,8 +12,9 @@ import {
 // Images
 import hero from "./img/hero.jpg";
 import kwadagoHero from "./img/kwadago.png";
-import gajamiaHero from "./img/gajamia.png";
 import foodiHero from "./img/FOODI.png";
+import scholarsHero from "./img/scholars.png";
+import roofing_uHero from "./img/roofing-U.png";
 
 const softBeige = "#f9efe7";
 const brightYellow = "#ffe872";
@@ -105,13 +106,11 @@ const Hero = () => {
     >
       <div className="w-full md:w-1/2 pr-0 md:pr-12 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6">
-          <span className={`bg-[${brightYellow}]`}>Frontend Developer</span> /{" "}
-          <br />
-          <span className={`bg-[${brightYellow}] px-2`}>Web Designer</span>
+          <span className={`bg-[${brightYellow}]`}>WordPress Developer</span>
         </h1>
         <p className="mb-8 leading-relaxed text-base sm:text-lg">
-          Results-driven Frontend Web Developer with expertise in building
-          responsive, user-centric web applications. Skilled in modern
+          Results-driven Website Developer using WordPress with expertise in
+          building responsive, user-centric web applications. Skilled in modern
           JavaScript frameworks and UI/UX best practices, with a strong focus on
           performance optimization, accessibility, and SEO [Search Engine
           Optimization].
@@ -149,12 +148,21 @@ const WorkSection = () => {
       ongoing: false,
     },
     {
-      title: "GA JAMI'A (Education Commerce)",
-      technologies: ["React", "Firebase", "Tailwind"],
+      title: "Scholars (School Landing Page)",
+      technologies: ["WordPress", "Elementor", "Astra", "WPForms"],
       description:
-        "An education-commerce platform with secure user login and logout functionality. It offers a seamless experience for purchasing educational materials, accessing courses, and managing user accounts. Features include responsive design, secure payment integration, and personalized user dashboards.",
-      image: gajamiaHero,
-      link: "https://gajamia.vercel.app/",
+        "A modern, mobile-friendly school website designed to showcase academic programs, Co-Curricular activities, and student life. It helps parents and students easily access information, apply online, and stay updated with news and events — all in one simple, professional platform.",
+      image: scholarsHero,
+      link: "",
+      ongoing: true,
+    },
+    {
+      title: "roofing-U (Roofing Agency Landing Page)",
+      technologies: ["WordPress", "Elementor", "Astra", "WPForms"],
+      description:
+        "A clean, conversion-focused roofing agency website that highlights services like roof installation, repair, and maintenance. It builds trust with before-and-after project photos, customer reviews, and an easy “Request a Quote” form — helping local homeowners connect instantly.",
+      image: roofing_uHero,
+      link: "",
       ongoing: true,
     },
     {
@@ -183,7 +191,7 @@ const WorkSection = () => {
         >
           {project.ongoing && (
             <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg">
-              Ongoing Project
+              Local WordPress Project
             </div>
           )}
           <div className="w-full md:w-1/2 p-8">
@@ -247,7 +255,7 @@ const ServicesSection = () => {
     },
     {
       icon: <ScanSearchIcon className="text-black" size={36} />,
-      title: "SEO Optimization",
+      title: "SEO Writing",
       description:
         "Implementing best practices for search engine optimization to improve website visibility and ranking on search engines.",
     },
